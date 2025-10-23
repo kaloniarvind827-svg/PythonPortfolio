@@ -1,0 +1,154 @@
+2: Data Types, Type Conversion, and Operators
+🧠 1. Built-in Data Types in Python
+Category	Data Type	Example	Notes
+Numeric	int, float, complex	5, 3.14, 2 + 3j	Used for mathematical operations
+Sequence	str, list, tuple, range	"abc", [1,2,3], (1,2,3), range(5)	Ordered collections
+Mapping	dict	{"a":1, "b":2}	Key-value pairs
+Set	set, frozenset	{1,2,3}	Unordered, unique items
+Boolean	bool	True, False	Used in logical operations
+Binary	bytes, bytearray, memoryview	b"abc"	For handling binary data
+⚙️ 2. Numeric Data Types
+🧩 Integers (int)
+
+Unlimited precision (only limited by available memory).
+
+Python 3 does not have int/long difference (as in Python 2).
+
+Example:
+
+a = 9999999999999999999999999
+print(a)
+
+
+✅ Works fine.
+
+🧩 Floating-point Numbers (float)
+
+Stored in IEEE 754 (64-bit) double-precision format.
+
+Precision ~15–17 digits.
+
+Example of rounding issue:
+
+print(0.1 + 0.2)  # 0.30000000000000004
+
+
+Use:
+
+from math import isclose
+isclose(0.1 + 0.2, 0.3)
+
+🧩 Complex Numbers (complex)
+
+Form: a + bj
+
+z = 3 + 4j
+print(z.real, z.imag)
+
+
+Used in scientific or engineering applications.
+
+🔄 3. Type Conversion
+✅ Implicit Conversion
+
+Python automatically promotes smaller → larger type:
+
+a = 5
+b = 2.5
+print(a + b)  # 7.5 (int → float)
+
+✅ Explicit Conversion
+
+Done manually using built-in functions:
+
+int("10") → 10
+float("3.14") → 3.14
+str(20) → "20"
+complex(5) → (5+0j)
+
+🧩 4. Operators in Python
+Type	Operators	Example
+Arithmetic	+, -, *, /, //, %, **	5 // 2 = 2, 5 ** 3 = 125
+Relational	>, <, >=, <=, ==, !=	a > b
+Logical	and, or, not	x > 5 and y < 10
+Assignment	=, +=, -=, *=	a += 5
+Identity	is, is not	a is b
+Membership	in, not in	'x' in 'exam'
+Bitwise	&, `	, ^, ~, <<, >>`
+🧠 5. Interview-Level Concepts & Questions
+
+What is the range of int in Python 3?
+→ No limit, depends on memory size.
+
+Why does 0.1 + 0.2 != 0.3?
+→ Floating-point precision issue in binary.
+
+What’s the difference between is and ==?
+
+== → compares values
+
+is → compares memory locations
+
+What is the output?
+
+a = 10
+b = 10.0
+print(a == b, a is b)
+
+
+✅ Output: True False
+
+How does Python store True and False?
+→ Internally as integers: True = 1, False = 0.
+
+What is the result of True + True + False?
+→ 2 (1 + 1 + 0)
+
+What’s the difference between / and //?
+/ → float division, // → floor division.
+
+Output:
+
+print(5 ** 2 ** 3)
+
+
+✅ 390625 (evaluated right to left → 5 ** (2 ** 3))
+
+Difference between mutable and immutable types:
+
+Mutable: list, dict, set
+
+Immutable: int, str, tuple
+
+What’s id() function?
+→ Returns memory address (identity) of an object.
+
+💻 6. Practice / Mini Programs
+
+Basic Arithmetic Calculator
+
+Take 2 numbers and perform all arithmetic operations.
+
+Show sum, difference, product, division.
+
+Even, Odd, and Range Check
+
+Input a number, check if even/odd.
+
+Print its square and cube.
+
+Compare Three Numbers
+
+Find the greatest and smallest using nested ternary operators.
+
+Type Conversion Playground
+
+Convert string inputs to int, float, and complex.
+
+Print types before and after conversion.
+
+Bitwise Visualizer
+
+Input two integers.
+
+Print results of &, |, ^, <<, and >>.
